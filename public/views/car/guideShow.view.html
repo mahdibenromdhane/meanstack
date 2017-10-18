@@ -1,0 +1,25 @@
+<article class="row">
+    <div class="col-xs-12 col-md-9">
+        <div role="tabpanel" class="tabs-styled">
+            <ul role="tablist" class="nav nav-tabs">
+      </ul>
+            <div class="tab-content">
+                <div id="1a" role="tabpanel" class="tab-pane fade in active">
+                    <h3 class="brand1">{{guide.title}}</h3>
+                    <div ng-bind-html="guide.description"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">{{guide.type}}</h2>
+            </div>
+            <div class="panel-body"><img alt="" src="../images/images_guides/{{guide.pathimg}}" style="margin: 0 auto; width: 100%; max-width: 250px;" class="img-responsive"></div>
+        </div>
+    </div>
+
+    <a href="#/car/guides" class="btn btn-primary btn-arrow-left btn-lg">Return To guide Page</a>
+</article>

@@ -1,0 +1,17 @@
+<h1>Liste des forums</h1>
+<article class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+
+        <div id="panelmove-t" style="z-index: 20; position: relative; transform: translateX(0px) translateY(0px);" class="panel panel-blue" ng-repeat="forums in forums">
+            <div class="panel-heading">
+
+                <h1>{{forums.sujets[0].titre}}</h1>
+            </div>
+            <div class="panel-body"><img alt="" src="../images/pages/ui-animation/co2.png" style="margin-right: 10px;" class="pull-left">
+                <p style="margin-bottom:7px;">{{forums.description}}</p>
+                <button id="panelmove" data-animate-action="{&quot;translateX&quot;:&quot;200px&quot;, &quot;translateY&quot;:&quot;50px&quot;}" data-animate-duration="1000" data-animate-easing="ease-out" data-animate-target="#panelmove-t" class="btn btn-sm btn-primary pull-right animate">
+                    <a href="/#forums/{{forums._id}}"style="color:white">Voir sujets</a></button>
+            </div>
+        </div>
+    </div>
+</article>

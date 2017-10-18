@@ -1,0 +1,51 @@
+<article class="row">
+<div class="col-xs-12 col-md-8">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"> <i class="fa fa-lg fa-envelope-o text-grey"></i>Contact form <small>( default )</small></h3>
+    </div>
+    <div class="panel-body">
+        <form action="" method="post">
+
+
+
+            <div class="inline-radios">
+                <p>How would you like us to respond to you?</p>
+                <label class="radio-inline radio-styled">
+                    <input type="radio" ng-model="responseType"  name="pref1" value="1" checked><span>Email</span>
+                </label>
+                <label class="radio-inline radio-styled">
+                    <input type="radio" ng-model="responseType" name="pref1" value="2"><span>Phone call</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="message1">Your Email</label>
+                <input id="email" name="message1" placeholder="maximum 500 characters" ng-model="Email" rows="5" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="subject1">Subject</label>
+                <select id="subject1" ng-model="subject" name="subject1" class="form-control">
+                    <option>Please select...</option>
+                    <option value="sales">Sales enquiry</option>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="complaint">Complaint</option>
+                    <option value="support">Support request</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message1">Message</label>
+                <textarea id="message1" name="message1" placeholder="maximum 500 characters" ng-model="Content" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="checkbox checkbox-styled">
+                <label>
+                    <input type="checkbox" id="copy1" name="copy1" value="yes"><span>Send me a copy of this message</span>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-success" ng-click="addReclamation()"><i class="fa fa-lg fa-envelope-o"></i>&nbsp; Send message</button>
+            <button type="button" class="btn btn-sm btn-outline btn-info pull-right"><i class="fa fa-lg fa-times"></i>&nbsp; Cancel</button>
+        </form>
+    </div>
+</div>
+</div>
+ </article>

@@ -1,0 +1,72 @@
+<div class="col-md-10 col-sm-12">
+    <div style="margin-bottom:0;" class="panel panel-purple">
+        <div class="panel-heading">
+            <h2 class="panel-title">Car History --{{car.model}} -- {{car.immatriculation}}</h2>
+        </div>
+    </div>
+    <ul class="timeline timeline-left">
+        <li class="timeline-purple">
+            <div class="timeline-badge"> <a href="#/car/history/add/{{carid}}"><i class="fa fa-plus"></i></a></div>
+            <div class="timeline-panel">
+                <h4 class="timeline-title">Click Here To Add History</h4>
+
+
+            </div>
+        </li>
+
+    </ul>
+
+
+
+
+
+
+    <ul ng-repeat="history in histories" class="timeline timeline-left">
+        <li class="timeline-purple">
+            <div class="timeline-badge"><i class="fa fa-car"></i></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="timeline-title">{{history.category}}<span class=" timeline-title pull-right">{{history.price}} Dinars</span> </h4>
+                    <p class="timeline-date"><i class="fa fa-calendar"></i>&nbsp; {{history.datemaintenance | date :  "dd.MM.y" }} &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-dashboard"></i>{{history.odometer }} KM     &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-map-marker"></i> {{history.place }}</p>
+                    <p class="timeline-date"></p>
+                </div>
+                <div class="timeline-body">
+                    <p>{{history.remarks}}</p>
+                    <p class="pull-right"><a href="" ng-click="deletecarhistory(history,$index)" class="btn btn-danger">Delete</a></p>
+                    <p class="pull-right"><a href="#/car/history/modify/{{history._id}}" ng-click="modifycarHistory(history)" class="btn btn-info">Modify</a></p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="timeline timeline-left">
+        <li class="timeline-purple">
+            <div class="timeline-badge"><i class="fa fa-star"></i></div>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="timeline-title">Welcome to <b>Power x</b></h4>
+                    <p class="timeline-date"><i class="fa fa-calendar"></i>&nbsp; Today</p>
+                </div>
+                <div class="timeline-body">
+                    <p>You started with PowerX :)</p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</div>

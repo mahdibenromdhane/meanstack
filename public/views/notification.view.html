@@ -1,0 +1,35 @@
+<h1>Ajouter Notification</h1>
+
+
+<article class="row">
+    <div class="col-xs-12 col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Notification form <small>( default )</small></h3>
+            </div>
+            <div class="panel-body">
+                <form ng-submit="addNotif()">
+
+
+                    <div class="form-group">
+                        <label for="libelle">Libelle</label>
+                  <input type="text" id="libelle"ng-model="libelle">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descrip</label>
+                        <textarea id="description" name="message1" placeholder="maximum 500 characters" rows="5" class="form-control" ng-model="description"></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-success"><i class="fa fa-lg fa-envelope-o"></i>&nbsp; Send Notification</button>
+                    <button type="button" class="btn btn-sm btn-outline btn-info pull-right"><i class="fa fa-lg fa-times"></i>&nbsp; Cancel</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</article>
+

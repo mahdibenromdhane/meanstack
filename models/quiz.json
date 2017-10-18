@@ -1,0 +1,155 @@
+[
+  { "_id":1,
+    "subject":"Global Energy",
+    "question": "How many people around the world rely on biomass energy like wood or dung for cooking?",
+    "tags": ["3 million","150 million","1 billion","2.6 billion"],
+    "correct":4,
+    "description":"The International Energy Agency and other global organizations estimate approximately 2.6 billion people in developing countries – more than one-third of the world’s population – rely on biomass for cooking. An additional 200-300 million people rely on coal for cooking and heating purposes.  All this has serious consequences for human health; about 3.5 million people die prematurely each year from exposure to indoor air pollution from these practices. Access to modern energy sources and advanced technologies could cut this loss of life significantly."
+  },
+  { "_id":2,
+    "subject":"Global Energy",
+    "question": "Which product is not made from petrochemicals derived from oil or natural gas?",
+    "tags": ["Aspirin","Lipstick", "Perfume" ,"Rubber", "Soft contact lenses"],
+    "correct":4,
+    "description":"This is somewhat of a trick question. Rubber is a naturally occurring product derived from trees and plants, mostly in South America and Southeast Asia. In the 19th century, the realization that rubber had many useful applications set off a global rubber boom. However, synthetic rubber made from oil and natural gas began to be developed early in the 20th century and now accounts for the lion’s share of global rubber use, particularly in tires for automotive vehicles."
+  },
+  { "_id":3,
+    "subject":"Global Energy",
+    "question": "What will global population be in 2040?",
+    "tags": ["5 billion", "7 billion", "9 billion", "11 billion"],
+    "correct":3,
+    "description":"By 2040, the world’s population is expected to rise to approximately 9 billion, up from about 7 billion today. Close to 95 percent of this population growth is likely to occur in countries that are not members of the Organization for Economic Co-operation and Development, particularly in Africa and Asia Pacific. By 2040, nine of the world’s most populous cities – and one of every three people on the planet – will be in China or India."
+  },
+  {
+    "_id":4,
+    "subject":"Global Energy",
+    "question": "With the global economy expected to grow 130 percent from 2010 to 2040, and population expected to increase to 9 billion, how much more energy will be required?",
+    "tags": ["About 35 percent more", "50 percent more", "100 percent more", "130 percent more"],
+    "correct":1,
+    "description":"Energy and prosperity are closely linked. Despite nearly 2 billion more people and substantial economic growth, global energy demand is expected to rise just 35 percent from 2010 to 2040. This is thanks to expected gains in energy efficiency around the world – advanced cars with better fuel economy entering the market are just one example. Without such efficiency improvements, global energy demand in 2040 could be about twice what it is today."
+
+  },
+  { "_id":5,
+    "subject":"Global Energy",
+    "question": "In nations all over the world, people are moving from the country into cities, particularly in developing regions. Only 25 percent of Chinese citizens lived in urban areas as recently as 1990. What percentage of the Chinese population will be living in cities in 2040?",
+    "tags": ["50 percent", "75 percent", "90 percent"],
+    "correct":2,
+    "description":"By 2040, about three-quarters of Chinese will live in urban areas. Over the next several decades, urbanization in China and other nations will drive demand for energy not just for basic needs but also modern uses such as air conditioning, appliances and electronics. In rural China today, for example, there are only about 16 air conditioners for every 100 households; in China's urban areas, that ratio is 112 per 100."
+  },
+  //Efficiency*****************************************************************************
+  { "_id":6,
+    "subject":"Efficiency",
+    "question": "Which uses less energy – taking a hot bath or a hot shower?",
+    "tags": ["A hot shower", "A hot bath"],
+    "correct":1,
+    "description":"According to David JC MacKay in his book Sustainable Energy – without the hot air, “Taking a bath uses about 5 kWh. For comparison, taking a shower (30 litres) uses about 1.4 kWh.” See his calculations "
+  },
+  {
+    "_id":7,
+    "subject":"Efficiency",
+    "question": "More than 100 million Americans gathered around big-screen televisions to watch the Super Bowl. What happened to home electricity usage during the Big Game?",
+    "tags": ["Home electricity usage went up", "Home electricity usage went down"],
+    "correct":2,
+    "description":"In 2011, GE estimated the electricity used by TVs showing the Super Bowl was enough to power all the homes in Dallas, Green Bay and Pittsburgh for 10 hours. It’s a lot of electricity. However, subsequent analysis showed that home electricity usage actually decreased during the game, three times more than the amount of energy consumed by all the TVs watching it. That’s because many households don't use other appliances during the game, and because many people watch at other people’s homes. "
+  },
+  {
+    "_id":8,
+    "subject":"Efficiency",
+    "question": "Using recycled aluminum scrap to make aluminum cans uses how much less energy than making new aluminum cans from scratch?",
+    "tags": ["48 percent", "25 percent", "79 percent", "95 percent"],
+    "correct":4,
+    "description":"According to the U.S. Energy Information Administration, using recycled aluminum to make cans uses 95 percent less energy than making new ones from bauxite ore, the raw material used to make aluminum.  Recycling can make a difference with regard to inputs for other manufacturing processes, as well. Making a ton of paper from recycled paper, for instance, saves up to 17 trees and uses 50 percent less water. "
+  },
+  { "_id":9,
+    "subject":"Efficiency",
+    "question": "If every U.S. home replaced one light bulb with a compact fluorescent bulb, the energy saved could light how many homes?",
+    "tags": ["One million", "Three million homes", "Five million"],
+    "correct":3,
+    "description":"Compact fluorescent lights use about 75 percent less energy than conventional incandescent light bulbs, so the savings from more than 115 million households plugging in a compact fluorescent could add up. By 2030, investments in energy efficiency could help Americans save $300 billion each year. "
+  },
+  {
+    "_id":10,
+    "subject":"Efficiency",
+    "question": "How you control your air conditioning in warmer months goes a long way to determining the size of your electric bill, and every degree counts. Each degree higher on the thermostat can save how much on your cooling costs?",
+    "tags": ["Half a percent", "1 percent", "Up to 5 percent"],
+    "correct":3,
+    "description":"Just the slightest adjustment on your thermostat can add up to savings. According to Pacific Gas & Electric, 3 to 5 percent more energy is used for each degree the air conditioner is set below 78 degrees "
+  },
+  { "_id":11,
+  "subject":"Efficiency",
+  "question": "What is the most cost-effective method for cooking in the kitchen?",
+  "tags": ["Convection oven", "Conventional oven", "Microwave oven", "Stovetop burner"],
+  "correct":3,
+  "description":"The American Council for an Energy-Efficient Economy calls the microwave the most efficient method for cooking. Microwaves use a lot of energy when operating, but thanks to reduced cooking times, using a microwave oven will use two-thirds as much energy as a conventional oven. That’s because microwaves’ heat waves focus on what’s in the container, and don’t waste energy on heating the air or container around it. "
+  },
+  { "_id":12,
+    "subject":"Natural Gas",
+    "question": "How much money has the average U.S. household gained as a consequence of unconventional oil and gas?",
+    "tags": ["No impact","$50", "$1,200", "$5,000"],
+    "correct":3,
+    "description":"A report from IHS Consulting estimates that the average household is seeing annual economic gains of $1,200 in real disposable income, reflecting lower costs for energy used in their homes as well as lower costs for other goods and services. IHS expects the average family’s gain in discretionary income to top $2,000 by 2015, and by 2025 it should be $3,500 per year."
+  },
+  { "_id":13,
+    "subject":"Natural Gas",
+    "question": "What country is the world's leading producer of natural gas?",
+    "tags": ["Canada","United States","Russia", "Saudi Arabia", "Norway"],
+    "correct":2,
+    "description":"In 2011 the United States surpassed Russia to become the world’s leading natural gas producing nation. Energy companies produced more than 24 trillion cubic feet of natural gas in the United States in 2013. The use of growing supplies of natural gas in power generation has helped the United States reduce its greenhouse gas emissions to levels not seen since the 1990s, while emissions elsewhere in the world have been rising."
+  },
+  { "_id":14,
+    "subject":"Natural Gas",
+    "question": "Which is the only major economy in the world to significantly reduce its energy-related carbon dioxide emissions over the last several years?",
+    "tags":["China", "Germany", "United States", "Japan"],
+    "correct":3,
+    "description":"In 2013, U.S. carbon dioxide emissions were 10 percent below 2007 levels, reaching a level similar to that of twenty years ago. According to data from the Energy Information Administration (EIA), energy-related carbon dioxide emissions have actually declined in four out of six years since 2007. The U.S. has reduced its energy-related carbon dioxide output more than any other country during that period. One reason has been growing use of natural gas for power generation."
+  },
+  {
+    "_id":15,
+    "subject":"Natural Gas",
+    "question": "The energy revolution in America’s oil and natural gas fields has sparked economic growth around the country. How many new American jobs have been created as a result of this bonanza?",
+    "tags":["2.1 million Jobs", "1 million", "10,000"],
+    "correct":1,
+    "description":"HS Consulting estimates the unconventional oil and gas value chain and energy-related chemicals' activities have created 2.1 new million American jobs so far, a figure that could rise to almost 3.9 million by 2025. These jobs are being created in states with oil and gas production using hydraulic fracturing, as well as non-producing states.   McKinsey & Company estimates shale energy could add 2 to 4 percent to annual GDP by the end of this decade."
+  },
+  {
+    "_id":16,
+    "subject":"Natural Gas",
+    "question": "The economic benefits of America’s shale energy development are confined to those states where drilling is occurring, such as North Dakota, Pennsylvania and Texas.?",
+    "tags":["False", "True"],
+    "correct":1,
+    "description":"Economic impacts from shale energy are being felt across the U.S., including in states with no shale gas or tight oil activity, according to IHS. There are 32 states in the lower 48 without shale energy production, yet “a significant portion of the economic activity is located in [these] non-producing states.” Such states often provide goods and services that are vital to oil and natural gas exploration elsewhere. For instance, New York State, with a ban presently in effect on shale gas development, nevertheless has benefited with 44,000 jobs."
+  },
+  {
+    "_id":17,
+    "subject":"Transportation",
+    "question": "Hybrid cars (gasoline/electric), which account for 1 percent of light-duty vehicles driven today, help improve overall fuel economy. By 2040, what percentage of the global fleet will likely be comprised of hybrids?",
+    "tags": ["18 percent", "35 percent", "50 percent","72 percent"],
+    "correct":2,
+    "description":"By 2040, we expect hybrid vehicles will account for approximately 35 percent of the global light-duty vehicle fleet. (Fully electric and plug-in hybrid vehicles, meanwhile are expected to comprise less than 5 percent of the global fleet in 2040.) The rise of hybrid vehicles helps explain why cars overall will be much more efficient by 2040, averaging about 45 mpg  worldwide compared to close to 25 mpg today."
+  },
+  {
+    "_id":18,
+    "subject":"Transportation",
+    "question": "What simple innovation is expected to help UPS save roughly 1.5 million gallons of fuel in 2014?",
+    "tags": ["Optimizing delivery routes, such as avoiding left turns", "Installing devices that prevent drivers from exceeding 45 mph", "Eliminating one delivery day per week"],
+    "correct":1,
+    "description":"In 2013, UPS introduced ORION – On-Road Integrated Optimization and Navigation – to optimize 55,000 delivery routes in the U.S. by 2016. ORION knows the addresses, required delivery and pickup times, and past traffic patterns for a driver’s route, then creates an optimized route up to the minute a driver is dispatched. With a fleet of nearly 100,000 vehicles delivering 17 million packages each day, small changes in route planning add up to big savings."
+  },
+  {
+    "_id":19,
+    "subject":"Transportation",
+    "question": "Traveling at 60 mph instead of 70 mph on a 20-mile highway commute to and from work can save how much gasoline annually?",
+    "tags": ["2 tanks of gas","3 tanks of gas","4 tanks of gas"],
+    "correct":3,
+    "description":"According to the American Automobile Association (AAA), traveling at 60 mph instead of 70 mph on your 20-mile highway commute would save you about 1.3 gallons of gas in a five-day work week, or 65 gallons over the course of one year (with two weeks off for vacation). For a car with a 16-gallon gas tank, that works out to four fill-ups worth of savings each year."
+  },
+  {
+    "_id":20,
+    "subject":"Transportation",
+    "question": "What sector of the economy is the largest consumer of aluminum?",
+    "tags": ["Food and beverage packaging", "Power generation", "Transportation", "Housing / construction"],
+    "correct":3,
+    "description":"Transportation is the main customer of aluminum, according to the Aluminum Association. It is light – cutting down on weight and fuel consumption – as well as strong, particularly when alloyed with other metals to increase strength. “Aluminum can reduce the weight of many key car components by up to 40 percent compared to only 11 percent for high-strength steel,” notes energy expert Vaclav Smil. “That is why the U.S. car industry now consumes about a third of the country’s aluminum.”   The fuel economy benefits from aluminum apply in the skies as well as on the roads. Aluminum and advanced composites now accounts for about 70 percent of the weight of an unloaded airplane."
+  }
+  
+]

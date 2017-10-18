@@ -1,0 +1,116 @@
+<div id="form12" role="tabpanel" class="tab-pane fade active in">
+    <!--
+       immatriculation: {type: String, unique:true},
+    model: String,
+    name: String,
+    year:Date,
+    color: {type: String,required: true},
+    energie : String,
+    puissance: Number,
+    category: String,
+    createdby:{type: String, default: 'Anonymous'},
+    battery: { type: mongoose.Schema.Types.ObjectId, ref: 'Battery' },
+    carhistories: [{ "type": mongoose.Schema.Types.ObjectId, "ref": "CarHistory" }],
+
+
+
+    -->
+
+    <div style="margin-top:15px;" class="panel panel-grey">
+        <div class="panel-heading">
+            <h3 class="panel-title">Add You Car</h3>
+        </div>
+        <div class="panel-body">
+            <form name="carform" class="form-styled"  ng-submit="addCar()">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="inp112">Immatriculation</label>
+                            <span id="i3b2"  ng-show="carform.immatriculation.$invalid" class="liftout-danger">Immatriculation required.</span>
+                            <input name="immatriculation" required type="text" id="inp112" placeholder="XXXXTunisXXX" ng-model="immatriculation" class="form-control">
+                       </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="in70-2">Car Model</label>
+                            <datalist id="fruits2">
+                                <select>
+                                    <option ng-repeat="mymodel in models" value="{{ mymodel.name }}">{{ mymodel.name }}</option>
+                                </select>
+                            </datalist>
+                            <span  ng-show="carform.modelcar.$invalid" class="liftout-danger">Model car required.</span>
+                            <input required ng-model="model" type="text" id="in70-2" name="modelcar" placeholder="Enter your car model" list="fruits2" class="form-control">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="inp312">Car Name</label>
+                            <span  ng-show="carform.name.$invalid" class="liftout-danger">Name car required.</span>
+                            <input name="name" required ng-model="name" type="text" id="inp312" placeholder="Car Name" class="form-control col-xs-12 col-lg-6">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="in71-1">Date Construction</label>
+                        <input required ng-model="year" type="date" id="in71-1" class="form-control">
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="colourInput1">Colour</label>
+                    <input required ng-model="color" type="color" id="colourInput1" name="colourInput1" value="#92d78b" oninput="colourValue1.value=colourInput1.value" class="form-control">
+                    <output for="colourInput1" id="colourValue1" name="colourValue1">#92d78b</output>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="in8-1">Select Energy</label>
+                    <select ng-model="energie"  class="form-control col-xs-12 col-lg-6">
+                        <option  value="essence default">Essence</option>
+                        <option value="gazoil">Gazoil</option>
+                        <option value="gaz">Gaz</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rangeInput1">Puissance en CH</label>
+                    <span  ng-show="carform.rangeInput1.$invalid" class="liftout-danger">Puissance car required.</span>
+                    <input ng-model="puissance" type="range" id="rangeInput1" name="rangeInput1" min="4" max="30" value="" required oninput="rangeValue1.value=rangeInput1.value">
+                    <output for="rangeInput1" id="rangeValue1" name="rangeValue1"></output>
+                </div>
+
+                <div class="form-group">
+                    <label for="in8-1">Select Category</label>
+                    <select ng-model="category" id="in8-1" class="form-control col-xs-12 col-lg-6">
+                        <option value="Bus">Bus</option>
+                        <option value="car">Car</option>
+                        <option value="car">Personal car</option>
+                        <option value="car">Taxi</option>
+                        <option value="Truck">Truck</option>
+                    </select>
+                </div>
+
+                <label style="display: none" ng-model="carform.$error.required"></label>
+
+                <button type="submit"  class="btn btn-default">Add Car</button>
+                <a href="/#/cars/list/58ef8afed4a5371f5cbddd9a"  class="btn btn-default pull-right">Return to List</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

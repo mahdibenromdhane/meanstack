@@ -1,0 +1,32 @@
+
+
+
+<form ng-submit="addUser()">
+    <div class="form-group">
+        <label>Firstname </label>
+        <input type="text" class="form-control" ng-model="firstname" placeholder="Enter Firstname" name="firstname">
+    </div>
+    <div class="form-group">
+        <label>Lastname </label>
+        <input type="text" class="form-control" ng-model="lastname" placeholder="Enter Lastname" name="lastname">
+    </div>
+    <div class="form-group">
+        <label>Num Battery </label>
+        <input type="number" class="form-control" ng-model="numberBattery" placeholder="Enter NumberBattery" name="numberBattery">
+    </div>
+
+
+    <select name="car-years" id="car-years"></select>
+    <select name="car-makes" id="car-makes"  ></select>
+    <select name="car-models" id="car-models" ng-model="marque"></select>
+    <select name="car-model-trims" id="car-model-trims"></select>
+    <input id="cq-show-data" type="button" value="Show Data" />
+    <div id="car-model-data"></div>
+{{marque}}
+    <button type="submit" class="btn btn-default">Submit</button>
+
+
+
+</form>
+
+

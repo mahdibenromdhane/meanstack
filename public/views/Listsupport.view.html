@@ -1,0 +1,25 @@
+<div class="panel panel-default ng-scope" style="min-height: 800px;">
+
+    <img src="../../images/req.jpg" width="100%" height="150px" alt="Image Cars">
+    <select name="show-filter" ng-model="catFilter"
+            ng-options="category as category.subject for category in reclamation">
+    </select>
+    <div class="panel-body">
+        <div class="row">
+            <div ng-repeat="rec in reclamation |  filter : {subject: catFilter.subject}: true" class="col-xs-12 col-sm-6 col-md-6">
+                <a href="/#/cars/show/{{car._id}}">
+                    <div class="panel summary">
+                        <p class="ng-binding">{{rec.subject}}</p>
+                        <p class="ng-binding">{{rec.dateReclamation}}</p>
+                        <p class="ng-binding">{{rec.Content}}</p>
+                        <p class="ng-binding">{{rec.Email}}</p>
+                        <a class="btn btn-success pull-right" href="/#/response/{{rec.Email}}"><i class="fa-plus"></i> Response</a>
+                        <i class="fa">
+                        </i>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

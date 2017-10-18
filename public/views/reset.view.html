@@ -1,0 +1,34 @@
+<article style="height: 100%;" class="row">
+          <div style="height:100%" class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="vert-centre">
+              <div class="panel panel-brand1 shadow-box">
+                <div class="panel-heading">
+                  <h2 class="panel-title"><i class="fa fa-lg fa-key text-brand1"></i>Reset Password</h2>
+                </div>
+                <div class="panel-body">
+                  <form data-toggle="validator" autocomplete="off" action="../login" method="post" class="form-styled">
+                    <div class="form-group has-feedback">
+                      <label for="un" class="control-label">Username</label>
+                      <input type="text" id="un" name="un" maxlength="15" required placeholder="Required" data-minlength="5" data-error="Must be at least 5 characters" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <label for="pass" class="control-label">Current password</label>
+                      <input type="password" id="pass" name="pass" required placeholder="Required" data-minlength="6" data-error="Must be at least 6 characters" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <label for="new1" class="control-label">New password</label>
+                      <input type="password" id="new1" name="new1" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" onchange="form.new2undefined.pattern = this.value;" placeholder="" data-error="Must be at least 6 characters including 1 number, 1 uppercase letter and 1 lowercase letter" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                    <div style="margin-bottom: 15px;" class="form-group has-feedback">
+                      <label for="new2" class="control-label">Repeat new password</label>
+                      <input type="password" id="new2" name="new2" required data-match="#new1" data-match-error="Must be the same as above" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-xs-100"><i class="fa fa-lg fa-check"></i>&nbsp; Change password</button>
+                    <a href="#/" role="button" class="btn btn-outline btn-default btn-xs-100 pull-right text-grey"><i class="fa fa-lg fa-times"></i>&nbsp; Cancel</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        

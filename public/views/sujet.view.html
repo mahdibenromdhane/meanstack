@@ -1,0 +1,78 @@
+
+
+
+<h1>Liste des sujets</h1>
+
+
+<article class="row">
+
+<div class="col-xs-12 col-sm-6 col-md-4">
+
+    <div id="panelwhirl-t" style="z-index: 15;" class="panel panel-bronze"ng-repeat="s in sujets">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">{{s.titre}}  {{s.date|date:"MM/dd/yyyy 'at' h:mma"}}</h3>
+        </div>
+        <div class="panel-body">
+            <p style="margin-bottom:7px;"><b class="lg"><br><i></i> <b></b> <p>{{s.description}} </p>
+
+
+            <button style="display: none"ng-init="getComments(s._id)">getNbre</button>
+            <button  ng-if="s.idUser==1" data-animate-action="transition.whirlIn" data-animate-duration="1000" data-animate-target="#panelwhirl-t" class="btn btn-sm btn-danger pull-right animate" ng-click="removeSubject(s._id)">Supprimer</button>
+
+            <button  ng-if="s.idUser==1" data-animate-action="transition.whirlIn" data-animate-duration="1000" data-animate-target="#panelwhirl-t" class="btn btn-sm btn-default pull-right animate" ng-click="updateSubject(s._id)">Update</button>
+            <!--
+            <button  ng-if="s.idUser!=1" data-animate-action="transition.whirlIn" data-animate-duration="1000" data-animate-target="#panelwhirl-t" class="btn btn-sm btn-info pull-right animate" ng-show="like" ng-click="addLike(s._id)">Like</button>
+            <button  ng-if="s.idUser!=1" data-animate-action="transition.whirlIn" data-animate-duration="1000" data-animate-target="#panelwhirl-t" class="btn btn-sm btn-danger pull-right animate" ng-show="dislike" ng-click="adddislike(s._id)">Dislike</button>
+            -->
+            <button id="panelwhirl" data-animate-action="transition.whirlIn" data-animate-duration="1000" data-animate-target="#panelwhirl-t" class="btn btn-sm btn-primary pull-right animate"><a href="#/forums/sujets/{{s._id}}" style="color:white">Messages</a></button>
+
+
+
+<div id="total"></div>
+           <img src="../images/facture/like.png" alt="" ng-if="s.idUser!=1"  ng-show="like" ng-click="addLike(s._id)">
+            <img src="../images/facture/dislike.png" alt="" ng-if="s.idUser!=1"  ng-show="dislike" ng-click="adddislike(s._id)">
+<div ng-init="getLikes(s.idUser)">{{result[$index]}} likes</div>
+            <div ng-init="getResponse(s._id)">{{result2[$index]}} reponses</div>
+<div></div>
+        </div>
+    </div>
+
+    <a class="btn btn-success pull-right" ng-click="afficherForm()" >Add Subject</a>
+</div>
+
+    <div class="col-xs-12 col-md-8" ng-show="abbes">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Notification form <small>( default )</small></h3>
+            </div>
+            <div class="panel-body">
+                <form ng-submit="addSubject()">
+                    <div class="form-group">
+                        <label for="titre">Titre</label>
+                        <input type="text" id="titre"ng-model="titre">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="libelle">Libelle</label>
+                        <input type="text" id="libelle"ng-model="libelle">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descrip</label>
+                        <textarea id="description" name="message1" placeholder="maximum 500 characters" rows="5" class="form-control" ng-model="description"></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-success notifybar-sb"><i class="fa fa-lg fa-envelope-o"></i>&nbsp; Send Notification</button>
+                    <button type="button" class="btn btn-sm btn-outline btn-info pull-right"><i class="fa fa-lg fa-times"></i>&nbsp; Cancel</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+  </article>
+

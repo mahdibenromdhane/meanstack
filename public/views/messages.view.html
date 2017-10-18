@@ -1,0 +1,55 @@
+<h1>Liste des Messages</h1>
+
+<article class="row">
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+<div id="panelshake-t" style="z-index: 17;" class="panel panel-green"ng-repeat="msg in commentaires">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{msg.titre}}</h3>
+    </div>
+    <div class="panel-body"><img alt="" src="../images/pages/ui-animation/user.png" style="margin-right: 10px;" class="pull-left">
+        <p style="margin-bottom:7px;"><p>{{msg.description}}{{msg.date|date:"MM/dd/yyyy 'at' h:mma"}}</p>
+        <button  ng-if="msg.idUser==1" data-animate-action="transition.whirlIn" data-animate-duration="1000" data-animate-target="#panelwhirl-t" class="btn btn-sm btn-danger pull-right animate" ng-click="removeMessage(msg._id)">Supprimer</button>
+
+    </div>
+
+</div>
+        <a class="btn btn-success pull-right" ng-click="afficherForm2()">Add Message</a>
+    </div>
+
+
+
+    <div class="col-xs-12 col-md-8" ng-show="comm">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> Notification form <small>( default )</small></h3>
+            </div>
+            <div class="panel-body">
+                <form ng-submit="addMessage()">
+
+                    <div class="form-group">
+                        <label for="titre">Titre</label>
+                        <input type="text" id="titre"ng-model="titre">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="libelle">Libelle</label>
+                        <input type="text" id="libelle"ng-model="libelle">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descrip</label>
+                        <textarea id="description" name="message1" placeholder="maximum 500 characters" rows="5" class="form-control" ng-model="description"></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-success"><i class="fa fa-lg fa-envelope-o"></i>&nbsp; Send Notification</button>
+                    <button type="button" class="btn btn-sm btn-outline btn-info pull-right"><i class="fa fa-lg fa-times"></i>&nbsp; Cancel</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,53 @@
+<div class="panel summary">
+    <img width="100px"  ng-src="../../images/car_models/{{car.model}}.png" class="pull-right"
+         onerror="this.src='../../images/car_models/Citycons_car.png'">
+    <a href="/#/cars/show/{{car._id}}">
+        <p>{{car.name}}</p>
+        <p>{{car.model}}</p>
+        <p>{{car.immatriculation}}</p>
+    </a><br><br>
+</div>
+
+
+<div class="col-md-2 col-sm-6">
+    <div ng-show="datas.status=='charging'" class="panel panel-green summary">
+        <h3>{{datas.lvl}}%</h3>
+        <h4>Charging</h4>
+        <p>Battery</p><i class="fa fa-plus"></i>
+    </div>
+    <div ng-show="datas.status=='discharging'" class="panel panel-red summary">
+        <h3>{{datas.lvl}}%</h3>
+        <h4>Discharging</h4>
+        <p>Battery</p><i class="fa fa-minus"></i>
+    </div>
+    <div class="panel panel-blue summary">
+        <h3>{{datas.cycle}}</h3>
+        <h4>Cycle</h4>
+        <i class="fa fa-circle"></i>
+    </div>
+        
+
+</div>
+
+
+<canvas data-type="radial-gauge"
+        data-value="{{datas.lvl}}"
+        data-width="500"
+        data-height="500"
+        data-bar-width="8"
+        data-bar-shadow="3"
+        data-color-bar-progress="rgba(50,200,50,.75)"
+></canvas>
+<canvas data-type="linear-gauge"
+        data-width="160"
+        data-height="500"
+        data-border-radius="20"
+        data-borders="0"
+        data-bar-begin-circle="false"
+        data-title="Temperature" data-units="°C" data-minor-ticks="10" data-value="50"
+        data-major-ticks="0,10,20,30,40,50,60,70,80,90,100" data-tick-side="right" data-number-side="right"
+        data-needle-side="right" data-animation-rule="bounce" data-animation-duration="750" data-bar-stroke-width="5"
+        data-value-box-border-radius="0" data-value-text-shadow="false" width="160" height="600"
+        style="width: 160px; height: 600px;">
+
+</canvas>

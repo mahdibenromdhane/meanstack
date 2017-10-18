@@ -1,0 +1,460 @@
+<h1>Factures</h1>
+<script>
+    function generatePDF () {
+        kendo.drawing.drawDOM($("#formConfirmation1")).then(function(group) {
+            kendo.drawing.pdf.saveAs(group, "Converted PDF.pdf");
+        });
+    }
+</script>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Gerer vos factures</code></h3>
+    </div>
+    <div role="tabpanel" class="panel-body tabs-styled">
+        <ul role="tablist" class="nav nav-tabs"><li class="dropdown hide pull-right tabdrop"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="display-tab"></span><b class="caret"></b></a><ul class="dropdown-menu"></ul></li>
+            <li role="presentation" class=""><a href="#4a" aria-controls="4a" role="tab" data-toggle="tab" class="no-bg blue-light" aria-expanded="false">Trim1</a></li>
+            <li role="presentation" class=""><a href="#4b" aria-controls="4b" role="tab" data-toggle="tab" class="no-bg red-border" aria-expanded="false">Trim2</a></li>
+            <li role="presentation" class=""><a href="#4c" aria-controls="4c" role="tab" data-toggle="tab" class="no-bg black-light" aria-expanded="false">Trim3</a></li>
+            <li role="presentation" class=""><a href="#4d" aria-controls="4d" role="tab" data-toggle="tab" class="no-bg orange-light" aria-expanded="false">Trim4</a></li>
+
+
+        </ul>
+        <div class="tab-content">
+            <div id="4a" role="tabpanel" class="tab-pane fade active in">
+                <h3 class="green">Janvier - Fevrier - Mars</h3>
+                <div class="document" id="formConfirmation1">
+                    <div class="row doc-address">
+                        <div class="col-xs-8">
+                            <img src="../images/facture/STEG.png"  alt="">
+                        </div>
+                        <div class="col-xs-4">
+
+                            <img src="../images/facture/logo.png" width="210" height="100"  style="margin-top: 70px" alt="">
+                        </div>
+                    </div>
+                    <div class="row doc-title doc-title-blue">
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                        <div class="col-xs-8">
+
+                            <h1>Facture Electricite</h1>
+                        </div>
+                        <div class="col-xs-4 doc-references">
+                            <p><b>Mme/Mr:</b> Arbia Frigui</p>
+                            <p><b>Date</b> 22 June 2016</p>
+                            <p><b>Reference:</b> 987654</p>
+                            <p><b>Adresse:</b> 47 RUe Yakout Hamaoui </p>
+                        </div>
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row doc-items">
+                        <div class="col-xs-12">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Libelles</th>
+                                    <th>Mois</th>
+                                    <th>Nouveau</th>
+                                    <th>Ancien</th>
+                                    <th >Consommation</th>
+                                    <th >PU</th>
+                                    <th >Montant</th>
+                                    <th >Red.Fixes</th>
+
+
+
+                                    <th >Totaux</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="f1 in facture1">
+                                    <td>1- Luminosite</td>
+                                    <td>3</td>
+                                    <td>{{f1.luminositeN}}</td>
+                                    <td>{{f1.luminositeA}}</td>
+                                    <td>{{f1.ConsommLum}}</td>
+                                    <td>{{f1.PuLum}}</td>
+                                    <td>{{f1.PuLum*f1.ConsommLum}}</td>
+
+                                    <td>{{f1.RedFixes}}</td>
+
+                                    <td>{{(f1.PuLum*f1.ConsommLum)+f1.RedFixes}}</td>
+
+
+
+
+
+                                </tr>
+                                <tr ng-repeat="f1 in facture1">
+                                    <td>2- Gaz</td>
+                                    <td>3</td>
+                                    <td>{{f1.GazN}}</td>
+                                    <td>{{f1.GazA}}</td>
+                                    <td>{{f1.ConsommGaz}}</td>
+                                    <td>{{f1.PuGaz}}</td>
+                                    <td>{{f1.PuGaz*f1.ConsommGaz}}</td>
+
+                                    <td>{{f1.RedFixes}}</td>
+
+                                    <td>{{(f1.PuGaz*f1.ConsommGaz)+f1.RedFixes}}</td>
+
+
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="row doc-details">
+                        <div class="col-xs-4">
+                            <h4>Services</h4>
+                            <p ng-repeat="f1 in facture1">
+                               {{f1.services}} DT
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Taxes</h4>
+                            <p ng-repeat="f1 in facture1">{{f1.taxes}} DT <br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Soldes</h4>
+                            <p ng-repeat="f1 in facture1">- {{f1.soldes}} DT</p>
+
+                        </div>
+                    </div>
+                    <h3 class="doc-total"ng-repeat="f1 in facture1" style="color:red">Credit Total = {{(((f1.PuGaz*f1.ConsommGaz)+f1.RedFixes)+((f1.PuLum*f1.ConsommLum)+f1.RedFixes)+f1.services+f1.taxes-f1.soldes)}}</h3>
+
+
+                </div>
+                <img src="../images/facture/pdf.ico" alt="" height="100" width="100" onclick="generatePDF()"style="margin-top: 0px;margin-left: 687px" >
+
+            </div>
+            <div id="4b" role="tabpanel" class="tab-pane fade ">
+                <h3 class="green">Avril - Mai - Juin</h3>
+                <div class="document" id="formConfirmation2">
+                    <div class="row doc-address">
+                        <div class="col-xs-8">
+                            <h4>Credit Note from:</h4>
+                            <p>
+                                Supplier Services<br>
+                                Enterprise House<br>
+                                Shaftsbury Avenue<br>
+                                London W1<br>
+                                Tel: 01234 567890
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Credit Note to:</h4>
+                            <p>
+                                Dream Clients Inc<br>
+                                Unit 4, ABC Business Park<br>
+                                Tartan Road, Dyce<br>
+                                Aberdeen<br>
+                                AB21 0BQ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row doc-title doc-title-green">
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                        <div class="col-xs-8">
+                            <h2>Supplier Services</h2>
+                            <h1>CREDIT NOTE</h1>
+                        </div>
+                        <div class="col-xs-4 doc-references">
+                            <p><b>Document No:</b> 000012345</p>
+                            <p><b>Dated:</b> 22 June 2016</p>
+                            <p><b>Cus Ref:</b> 987654</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row doc-items">
+                        <div class="col-xs-12">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Details:</th>
+                                    <th class="amount">net</th>
+                                    <th class="amount">VAT</th>
+                                    <th class="amount">gross</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</td>
+                                    <td class="amount">-250.00</td>
+                                    <td class="amount">-50.00</td>
+                                    <td class="amount">-300.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Etiam eu sollicitudin velit, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</td>
+                                    <td class="amount">-785.25</td>
+                                    <td class="amount">-157.05</td>
+                                    <td class="amount">-942.30</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td class="amount">-1,035.25</td>
+                                    <td class="amount">-207.05</td>
+                                    <td class="amount bold">-1,242.30</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <h3 class="doc-total">Credit Total = €1,242.30</h3>
+                        </div>
+                    </div>
+                    <div class="row doc-details">
+                        <div class="col-xs-4">
+                            <h4>Supplier's details</h4>
+                            <p>
+                                Registered Office: Enterprise House<br>
+                                Shaftsbury Avenue, London W1<br>
+                                Reg No: 2589559 England<br>
+                                VAT Reg: 615 0773 96
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Taxation summary</h4>
+                            <p>VAT Standard Rate (20%): €-207.05<br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Terms</h4>
+                            <p>Strictly 30 days.</p>
+                            <ul ng-repeat="f in factures">
+                                <li>{{f.name}}</li>
+                                <li>{{f.montant}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                     </div>
+            <div id="4c" role="tabpanel" class="tab-pane fade ">
+                <h3 class="green">Juillet - Aout -Septembre</h3>
+                <div class="document" id="formConfirmation3">
+                    <div class="row doc-address">
+                        <div class="col-xs-8">
+                            <h4>Credit Note from:</h4>
+                            <p>
+                                Supplier Services<br>
+                                Enterprise House<br>
+                                Shaftsbury Avenue<br>
+                                London W1<br>
+                                Tel: 01234 567890
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Credit Note to:</h4>
+                            <p>
+                                Dream Clients Inc<br>
+                                Unit 4, ABC Business Park<br>
+                                Tartan Road, Dyce<br>
+                                Aberdeen<br>
+                                AB21 0BQ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row doc-title doc-title-green">
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                        <div class="col-xs-8">
+                            <h2>Supplier Services</h2>
+                            <h1>CREDIT NOTE</h1>
+                        </div>
+                        <div class="col-xs-4 doc-references">
+                            <p><b>Document No:</b> 000012345</p>
+                            <p><b>Dated:</b> 22 June 2016</p>
+                            <p><b>Cus Ref:</b> 987654</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row doc-items">
+                        <div class="col-xs-12">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Details:</th>
+                                    <th class="amount">net</th>
+                                    <th class="amount">VAT</th>
+                                    <th class="amount">gross</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</td>
+                                    <td class="amount">-250.00</td>
+                                    <td class="amount">-50.00</td>
+                                    <td class="amount">-300.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Etiam eu sollicitudin velit, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</td>
+                                    <td class="amount">-785.25</td>
+                                    <td class="amount">-157.05</td>
+                                    <td class="amount">-942.30</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td class="amount">-1,035.25</td>
+                                    <td class="amount">-207.05</td>
+                                    <td class="amount bold">-1,242.30</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <h3 class="doc-total">Credit Total = €1,242.30</h3>
+                        </div>
+                    </div>
+                    <div class="row doc-details">
+                        <div class="col-xs-4">
+                            <h4>Supplier's details</h4>
+                            <p>
+                                Registered Office: Enterprise House<br>
+                                Shaftsbury Avenue, London W1<br>
+                                Reg No: 2589559 England<br>
+                                VAT Reg: 615 0773 96
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Taxation summary</h4>
+                            <p>VAT Standard Rate (20%): €-207.05<br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Terms</h4>
+                            <p>Strictly 30 days.</p>
+                            <ul ng-repeat="f in factures">
+                                <li>{{f.name}}</li>
+                                <li>{{f.montant}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="4d" role="tabpanel" class="tab-pane fade ">
+                <h3 class="green">Octobre - Novembre - Decembre</h3>
+                <div class="document" id="formConfirmation4">
+                    <div class="row doc-address">
+                        <div class="col-xs-8">
+                            <h4>Credit Note from:</h4>
+                            <p>
+                                Supplier Services<br>
+                                Enterprise House<br>
+                                Shaftsbury Avenue<br>
+                                London W1<br>
+                                Tel: 01234 567890
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Credit Note to:</h4>
+                            <p>
+                                Dream Clients Inc<br>
+                                Unit 4, ABC Business Park<br>
+                                Tartan Road, Dyce<br>
+                                Aberdeen<br>
+                                AB21 0BQ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row doc-title doc-title-green">
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                        <div class="col-xs-8">
+                            <h2>Supplier Services</h2>
+                            <h1>CREDIT NOTE</h1>
+                        </div>
+                        <div class="col-xs-4 doc-references">
+                            <p><b>Document No:</b> 000012345</p>
+                            <p><b>Dated:</b> 22 June 2016</p>
+                            <p><b>Cus Ref:</b> 987654</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row doc-items">
+                        <div class="col-xs-12">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Details:</th>
+                                    <th class="amount">net</th>
+                                    <th class="amount">VAT</th>
+                                    <th class="amount">gross</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</td>
+                                    <td class="amount">-250.00</td>
+                                    <td class="amount">-50.00</td>
+                                    <td class="amount">-300.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2. Etiam eu sollicitudin velit, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</td>
+                                    <td class="amount">-785.25</td>
+                                    <td class="amount">-157.05</td>
+                                    <td class="amount">-942.30</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td class="amount">-1,035.25</td>
+                                    <td class="amount">-207.05</td>
+                                    <td class="amount bold">-1,242.30</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <h3 class="doc-total">Credit Total = €1,242.30</h3>
+                        </div>
+                    </div>
+                    <div class="row doc-details">
+                        <div class="col-xs-4">
+                            <h4>Supplier's details</h4>
+                            <p>
+                                Registered Office: Enterprise House<br>
+                                Shaftsbury Avenue, London W1<br>
+                                Reg No: 2589559 England<br>
+                                VAT Reg: 615 0773 96
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Taxation summary</h4>
+                            <p>VAT Standard Rate (20%): €-207.05<br></p>
+                        </div>
+                        <div class="col-xs-4">
+                            <h4>Terms</h4>
+                            <p>Strictly 30 days.</p>
+                            <ul ng-repeat="f in factures">
+                                <li>{{f.name}}</li>
+                                <li>{{f.montant}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+

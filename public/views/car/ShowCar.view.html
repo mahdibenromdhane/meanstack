@@ -1,0 +1,66 @@
+<div id="form12" role="tabpanel" class="tab-pane fade active in">
+    <div style="margin-top:15px;" class="panel panel-green">
+        <div class="panel-heading">
+            <h3 class="panel-title">Show Car</h3>
+        </div>
+        <div class="panel-body">
+            <form action="#" class="form-styled">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+
+                            <label for="inp112">Immatriculation</label>
+                            <input type="text" disabled="" id="inp112" placeholder="XXXXTunisXXX" value="{{car.immatriculation}}" class="form-control disabled">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="in70-2">Car Model</label>
+                            <input value="{{car.model}}" disabled="" type="text" id="in70-2" name="in70-2" placeholder="Enter your car model" class="form-control disabled">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="inp312">Car Name</label>
+                            <input value="{{car.name}}" disabled="" type="text" id="inp312" class="form-control col-xs-12 col-lg-6">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="in71-1">Date Construction</label>
+                            <input value="{{car.year}}" disabled="" type="text" id="in71-1" class="form-control disabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Color</label>
+                  <input type="text"  style="background-color:{{car.color}}" disabled="" id="colourValue1" >{{car.color}}</input>
+                </div>
+
+
+                <div class="form-group">
+                    <label> Energy</label>
+                    <input value="{{car.energie}}" disabled="" type="text"  class="form-control disabled">
+
+                </div>
+
+                <div class="form-group">
+                    <label >Puissance en CH</label>
+                    <input value="{{car.puissance}}" disabled="" type="text" class="form-control disabled">
+
+                </div>
+
+                <div class="form-group">
+                    <label> Category</label>
+                    <input value="{{car.category}}" disabled="" type="text"class="form-control disabled">
+                </div>
+                <a href="/#/cars/list/58ef8afed4a5371f5cbddd9a"  class="btn btn-default">Return to List</a>
+                <a href="/#/car/history/{{car._id}}"  class="btn btn-default pull-right">Add History</a>
+            </form>
+        </div>
+    </div>
+
+</div>

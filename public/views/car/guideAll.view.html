@@ -1,0 +1,15 @@
+ <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Interview guide <small> Discover here all the tips and tricks of the editor for the maintenance of your vehicle</small></h3>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div ng-repeat="guide in guides" class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="/#/car/guides/{{guide._id}}"><div class="panel summary">
+                        <p>{{guide.type}}</p><i class="fa"><img ng-src="../images/images_guides/icon_guides/{{guide.iconimg}}"></i>
+                    </div></a>
+                </div>
+            </div>
+        </div>
+    </div>

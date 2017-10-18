@@ -1,0 +1,35 @@
+<div class="panel panel-default ng-scope" style="min-height: 800px;">
+    <div class="panel-heading">
+        <h3>My Cars
+            <a class="btn btn-success pull-right" href="/#/cars/add/58ef8afed4a5371f5cbddd9a"><i class="fa fa-plus"></i>
+                Add a car</a>
+        </h3>
+
+    </div>
+    <img src="../../images/road-trip.jpg" width="100%" height="150px" alt="Image Cars">
+    <div style="min-height: 100px;" class="panel-body">
+        <div class="row">
+            <div ng-repeat="car in cars" class="col-xs-12 col-sm-6 col-md-6">
+
+                <div class="panel summary">
+                    <img width="100px"  ng-src="../../images/car_models/{{car.model}}.png" class="pull-right"
+                         onerror="this.src='../../images/car_models/Citycons_car.png'">
+                    <a href="/#/cars/show/{{car._id}}">
+                        <p>{{car.name}}</p>
+                        <p>{{car.model}}</p>
+                        <p>{{car.immatriculation}}</p>
+                    </a><br><br>
+                    <div>
+                        <a href="/#/cars/modify/{{car._id}}" class="btn btn-default"><i class="fa fa-pencil"></i> Modify</a>
+                        <button style="color: white" ng-click="deletecar(car,$index)" class="btn btn-danger"><i
+                                style="color: white" class="fa fa-trash"></i>Delete
+                        </button>
+                        <a href="/#/car/history/{{car._id}}" class="btn btn-default pull-right"><i class="fa fa-history"></i>Car History</a>
+                        <a style="color: white" href="/#/data/{{car._id}}" class="btn btn-info"><i style="color: white" class="fa fa-battery-2"></i> Battery</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

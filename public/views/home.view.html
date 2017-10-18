@@ -1,0 +1,55 @@
+
+<article class="row">
+    <div class="col-md-2 col-sm-12">
+        <div class="panel panel-green summary">
+            <h3 data-trigger="countup" data-to="25" data-suffix="%">{{(data.main.temp-90)*2/13| number:1}}°C.</h3>
+            <h4>Temperature</h4>
+            <p>{{data.weather.description}}</p><i class="fa fa-server"></i>
+        </div>
+        <div class="panel panel-green summary">
+            <h3 data-trigger="countup" data-to="32" data-suffix="%">{{data.main.humidity}}%</h3>
+            <h4>Humidity</h4>
+            <p>Weather</p><i class="fa fa-database"></i>
+        </div>
+        <div class="panel panel-red summary">
+            <h3 data-trigger="countup" data-to="75" data-suffix="%">{{donnees.lvl}} %</h3>
+            <h4>Charging</h4>
+            <p>Battery</p><i class="fa fa-sitemap"></i>
+        </div>
+        <div class="panel panel-yellow summary">
+            <h3 data-trigger="countup" data-to="53" data-suffix="%">0%</h3>
+            <h4>Kilométrage</h4>
+            <p>Device</p><i class="fa fa-phone"></i>
+        </div>
+    </div>
+    <div class="col-md-10 col-sm-12">
+        <div style="margin-bottom:0;" class="panel panel-purple">
+            <div class="panel-heading">
+                <h2 class="panel-title">Les conseils du jours </h2>
+            </div>
+        </div>
+        <ul class="timeline timeline-left" ng-repeat=" notif in notifications">
+            <li class="timeline-purple">
+                <div class="timeline-badge"><i class="fa fa-thumb-tack"></i></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">{{notif.libelle}}</h4>
+                        <p class="timeline-date"><i class="fa fa-calendar"></i>&nbsp; Today</p>
+                    </div>
+                    <div class="timeline-body">
+                        <p>{{notif.description}}</p>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="col-xs-12 col-md-12">
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+
+
+
+        </div>
+    </div>
+</article>

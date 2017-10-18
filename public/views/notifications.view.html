@@ -1,0 +1,46 @@
+<h1>All Notifications</h1>
+
+
+<div class="col-md-6">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="btn btn-success " href="/#/notif/add">Add Notification</a>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table">
+
+                    <thead>
+                    <tr>
+
+                        <th scope="col">LIbelle</th>
+                        <th scope="col">Decription</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  ng-repeat="notif in notifications">
+                        <td>{{notif.libelle}}</td>
+                        <td>{{notif.description}}</td>
+                        <td><a  ng-click="removeNotification(notif._id)">Delete</a></td>
+                        <td><a  href="/#notification/edit/{{notif._id}}" style="color:blue">Update</a></td>
+                    </tr>
+
+                    </tbody>
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div ng-if="notifications==false">
+    No notifications to display
+</div>

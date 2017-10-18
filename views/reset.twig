@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+COLOURcode Template
+Copyright 2016 Pro-Coders
+https://themeforest.net/user/pro-coders
+-->
+<html>
+<!-- BEGIN HEAD -->
+
+<!-- Mirrored from colourcode.procoders.site/function-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Mar 2017 02:27:04 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Pro-Coders">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" id="favicon" href="../images/favicon.png">
+    <title>Login Form</title>
+    <!-- BEGIN STYLES -->
+    <link rel="stylesheet" id="pagestyle" href="../stylesheets/layout.min.css">
+    <!-- END STYLES -->
+
+
+
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="body-blank">
+<!-- BEGIN WRAP CONTAINER-FLUID -->
+<section class="container-fluid">
+    <!-- BEGIN HEADER -->
+    <!-- END HEADER -->
+    <!-- BEGIN MAIN PAGE-CONTENT -->
+    <main>
+        <!-- BEGIN CONTENT -->
+    <article style="height: 100%;" class="row">
+          <div style="height:100%" class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="vert-centre">
+              <div class="panel panel-brand1 shadow-box">
+                <div class="panel-heading">
+                  <h2 class="panel-title"><i class="fa fa-lg fa-key text-brand1"></i>Reset Password</h2>
+                </div>
+                <div class="panel-body">
+                  <form data-toggle="validator" autocomplete="off" action="/reset" method="post" class="form-styled">
+                    <div class="form-group has-feedback">
+                      <label for="un" class="control-label">Email</label>
+                      <input type="email" id="un" name="username" maxlength="15" required placeholder="Required" data-minlength="5" data-error="Must be at least 5 characters" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+
+                      <input type="password" id="un" name="password" style="display: none">
+                    
+
+                    <button type="submit" class="btn btn-primary btn-xs-100"><i class="fa fa-lg fa-check"></i>&nbsp; Change password</button>
+                    <a href="/signin" role="button" class="btn btn-outline btn-default btn-xs-100 pull-right text-grey"><i class="fa fa-lg fa-times"></i>&nbsp; Cancel</a>
+                  </form>
+                                                <br>
+                            <br>
+                            <br>
+                            
+                                                    {% if message %}
+                        <div role="alert" class="alert alert-warning alert-icon"><b>{{message}}</b></div>
+                        {% endif%}
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- END CONTENT -->
+    </main>
+</section>
+<!-- BEGIN SCRIPTS -->
+<script src="../js/layout.min.js"></script>
+<!-- END SCRIPTS -->
+</body>
+<!-- END BODY -->
+
+<!-- Mirrored from colourcode.procoders.site/function-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Mar 2017 02:27:04 GMT -->
+</html>

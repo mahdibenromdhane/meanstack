@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp" >
+<head>
+    <meta charset="utf-8">
+		 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Pro-Coders">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" id="favicon" href="imgages/favicon.png">
+    <title>Dashboard - Corporate :: COLOURCode
+    </title>
+    <!--
+    <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-2.0.3.css">
+    --> 
+    <link rel="stylesheet" href="plugins/visjs/vis.min.css">
+    <link rel="stylesheet" href="plugins/custombox/custombox.min.css">
+	  <link rel="stylesheet" href="plugins/jbox/jBox.css">
+    <link rel="stylesheet" href="plugins/sweetalert/sweetalert.css">													
+    <style>
+      #chart_servers, #chart_capacity {
+          height: 400px;
+          display: block;
+          width: 100%;
+      }
+      
+    </style>
+    <!-- BEGIN STYLES -->
+    <link rel="stylesheet" id="pagestyle" href="stylesheets/layout.min.css">
+	    <link rel="stylesheet"  href="stylesheets/style.css">													 
+
+
+ 
+    <!-- BEGIN STYLES -->
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js"></script>
+    <script type="text/javascript"></script>																			  
+
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script>
+
+app.controller('myCtrl', function($scope,$http) {
+         $http.get("/getuser").then(function(result) { 
+     $scope.currentUser = result.data;
+     console.log(result.data);
+  });
+        
+});
+
+
+</script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+	    <script src="javascripts/controllers/HomeController.js"></script>
+    <script src="javascripts/controllers/NotificationController.js"></script>																		 
+
+	    <script src="javascripts/controllers/ForumController.js"></script>
+    <script src="javascripts/controllers/FactureController.js"></script>																  
+				  							
+    <script src="javascripts/controllers/batteryController.js"></script>
+		  <script src="javascripts/controllers/car/guideController.js"></script>
+    <script src="javascripts/controllers/car/CarController.js"></script>
+	<script src="javascripts/controllers/car/CarHistoryController.js"></script>									
+       <script src="javascripts/controllers/reclamationController.js"></script>
+     <script src="javascripts/controllers/quiz/quizController.js"></script>
+	<script src="chart/gauge.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
+
+
+
+</head>
+
+<body >
+
+<section class="wrap container-fluid" >
+    <!-- BEGIN HEADER -->
+    <header class="navbar navbar-inverse navbar-fixed-top noprint"><a id="menu-toggle" href="#" title="Main Menu Toggle" class="menu-toggle pull-left"><i class="fa fa-bars fa-lg"></i></a>
+        <div title="dashboard" class="navbar-brand"><i>Power X</i></div><a id="breadcrumbs-toggle" href="#" data-placement="bottom" title="Toggle threadcrumbs and search bar" class="breadcrumbs-toggle pull-left"><i class="fa fa-search fa-lg"></i></a><a href="site-map.html" data-placement="bottom" title="Site Map - find a specific template feature or plug-in" class="map-toggle pull-left"><i class="fa fa-map fa-lg"></i></a><a id="panel-toggle" href="#" title="Side Panel" class="panel-toggle pull-right"><i class="fa fa-upload fa-lg fa-rotate-270"></i></a>
+        <div class="dropdown pull-right themedropscroll"><a id="date-toggle" href="#" title="Time and Date" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-trigger="clockdigital" class="date-toggle current-time clock-ampm"></a>
+            <ul aria-labelledby="date-toggle" class="themedrop date-dropdown dropdown-menu">
+                <li><a href="#">
+                    <div class="datepicker-inline"></div></a></li>
+            </ul>
+        </div>
+        <div class="dropdown pull-right themedropscroll"><a id="user-toggle" href="#" title="User Actions" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="user-toggle"><i class="fa fa-user fa-lg"></i></a>
+            <ul aria-labelledby="user-toggle" class="user-dropdown themedrop dropdown-menu">
+            
+                <li ng-controller="myCtrl"><a href="function-profile.html"><i class="fa fa-fw fa-user text-blue"></i>{{currentUser.firstName}}</a></li>
+                <li><a href="/change"><i class="fa fa-fw fa-key text-grey"></i>Reset Password</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="function-lock.html"><i class="fa fa-fw fa-lock text-red"></i>Lock Screen</a></li>
+                <li class="red-lighter"><a href="/signout" onClick="window.location.reload()"><i class="fa fa-fw fa-sign-out text-red"></i>Logout</a></li>
+            </ul>
+        </div>
+        <div class="dropdown pull-right themedropscroll"><a id="mail-toggle" href="#" title="Latest Emails" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="mail-toggle"><i class="fa fa-envelope fa-lg"><span class="badge badge-danger">4</span></i></a>
+            <ul aria-labelledby="mail-toggle" class="mail-dropdown themedrop dropdown-menu">
+                <li class="mail-header"><a href="#"><b>4</b> new messages<i class="fa fa-refresh pull-right text-grey"></i><span class="pull-right">View All &nbsp; </span></a></li>
+                <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>techsupport@bjsystems.com
+                    <h4>RE: System Performance Report</h4>
+                    <p>15:30 today</p></a></li>
+                <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>charles.dance@outlook.com
+                    <h4>Game of Thrones Audition</h4>
+                    <p>15:25 today</p></a></li>
+                <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>info@thegrandhotel.com
+                    <h4>Conference Booking Details</h4>
+                    <p>15:12 today</p></a></li>
+                <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>Peter Russell
+                    <h4>RE: System Performance Report</h4>
+                    <p>14:56 today</p></a></li>
+                <li><a href="#"><i class="fa fa-fw fa-envelope"></i>services@c9.io
+                    <h4>Latest Cloud 9 Innovations</h4>
+                    <p>13:33 today</p></a></li>
+                <li><a href="#"><i class="fa fa-fw fa-envelope"></i>techsupport@bjsystems.com
+                    <h4>System Performance Report</h4>
+                    <p>13:12 today</p></a></li>
+            </ul>
+        </div><a id="options-toggle" href="#paneltab1" title="Template Options" class="options-toggle pull-right"><i class="fa fa-wrench fa-lg"></i></a>
+    </header>
+    <!-- END HEADER -->
+    <!-- BEGIN MAIN PAGE-CONTENT -->
+    <main class="page-content menu-open">
+        <!-- BEGIN BREADCRUMBS -->
+        <ol id="breadcrumb" class="breadcrumb noprint bc-closed">
+            <li><span>Home</span>
+            </li>
+            <li class="active"><span>Dashboard - Corporate</span>
+            </li>
+            <li>
+                <form action="#" class="navbar-form breadcrumb-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search" class="input-sm form-control"/>
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </li>
+        </ol>
+        <!-- END BREADCRUMBS -->
+        <!-- BEGIN CONTENT -->
+       <div ng-view >
+
+       </div>
+        <!-- END CONTENT -->
+        <!-- BEGIN SIDEMENU -->
+        <div id="side-menu" class="side-menu noprint themescroll">
+            <div role="tabpanel" class="side-bar-tabs">
+                <!-- nav tabs-->
+                <ul id="tablist" role="tablist" class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#menutab1" aria-controls="menutab1" role="tab" data-toggle="tab">Menu</a></li>
+                    <li role="presentation"><a href="#menutab2" aria-controls="menutab2" role="tab" data-toggle="tab">Clock</a></li>
+                </ul>
+                <!-- tab panes-->
+                <div class="tab-content">
+                    <div id="menutab1" role="tabpanel" class="tab-pane active in fade">
+                        <!-- start menu tab-->
+                        <div id="mmenu-container">
+                            <nav id="mmenu">
+                                <ul>
+                                    <li class="lb-purple"><a href="/#/home"><span><i class="fa fa-home"></i>Home</span>
+                             </a>
+                                    </li>
+                                    <li class="lb-blue"><a href="/#/data"><span><i class="fa fa-clock-o"></i>Real Time Data</span>
+                              </a>
+                                    </li>
+                                    <li class="lb-yellow"><a href="/#/map"><span><i class="fa fa-map"></i>CO2 Map</span>
+                                 </a>
+                                    </li>
+                                    <li class="lb-green"><a href="/#/support"><span><i class="fa fa-support"></i>Support </span>
+                                    </a>
+                                    </li>
+                        
+                                  <li class="lb-green"><a href="/#/car/guides"><span><i class="fa fa-info"></i>Car Maintenance guide</span>
+                                    </a>
+                                    </li>
+                                    <li class="lb-green"><a href="/#/cars/list/58ef8afed4a5371f5cbddd9a"><span><i class="fa fa-car"></i>My Cars</span>
+                                    </a>
+                                    </li>
+                                    <li class="lb-green"><a href="/#/forum"><span><i class="fa fa-info"></i>Forum</span>
+                                    </a>
+                                    </li>
+                                    <li class="lb-green"><a href="/#/Mesfactures"><span><i class="fa fa-facebook"></i>Mes factures</span>
+                                    </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- end menu tab-->
+                    </div>
+                    <div id="menutab2" role="tabpanel" class="tab-pane fade">
+                        <div class="scrolling">
+                            <!-- start clock tab-->
+                            <div class="clock">
+                                <canvas id="clockface" width="180" height="180" data-trigger="clockface"></canvas>
+                                <div data-trigger="clockdigital" data-format="HH:mm" class="clock-sidemenu"></div>
+                            </div>
+                            <div data-trigger="datetimepicker" class="datepicker-inline"></div>
+                            <!-- end clock tab-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END SIDEMENU -->
+        <!-- BEGIN SIDEPANEL -->
+        <div id="side-panel" class="side-panel noprint themescroll">
+            <div role="tabpanel" class="side-bar-tabs">
+                <!-- nav tabs-->
+                <ul id="tablist2" role="tablist" class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#paneltab1" aria-controls="paneltab1" role="tab" data-toggle="tab">Options</a></li>
+                    <li role="presentation"><a href="#paneltab2" aria-controls="paneltab3" role="tab" data-toggle="tab">Mail</a></li>
+                </ul>
+                <!-- tab panes-->
+                <div class="tab-content">
+                    <div id="paneltab1" role="tabpanel" class="tab-pane active in fade themescroll">
+                        <!-- start tab 1-->
+                        <h4>Template Options:</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="options_menumode" style="width:100%;">Menu Mode</label>
+                                <input id="options_menumode" type="checkbox" data-trigger="bootstrap-switch" data-on-color="primary" data-on-text="Expanding" data-off-color="info" data-off-text="Sliding" checked class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="options_topbar" style="width:100%;">Top Bar Fixing</label>
+                                <input id="options_topbar" type="checkbox" data-trigger="bootstrap-switch" data-on-color="primary" data-on-text="Fixed" data-off-color="info" data-off-text="UnFixed" checked class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="options_sidemenu" style="width:100%;">Side Menu Fixing</label>
+                                <input id="options_sidemenu" type="checkbox" data-trigger="bootstrap-switch" data-on-color="primary" data-on-text="Fixed" data-off-color="info" data-off-text="UnFixed" checked class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="options_theme" style="width:100%;">Alternate Theme Colours</label>
+                                <input id="options_theme" type="checkbox" data-trigger="bootstrap-switch" data-on-color="primary" data-on-text="Theme 1" data-off-color="info" data-off-text="Theme 2" checked class="form-control">
+                            </div>
+                        </form>
+                        <!-- end tab 1-->
+                    </div>
+                    <div id="paneltab2" role="tabpanel" class="tab-pane fade">
+                        <!-- start tab 2-->
+                        <ul class="mail-list">
+                            <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>techsupport@bjsystems.com
+                                <h4>RE: System Performance Report</h4>
+                                <p>15:30 today</p></a></li>
+                            <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>charles.dance@outlook.com
+                                <h4>Game of Thrones Audition</h4>
+                                <p>15:25 today</p></a></li>
+                            <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>info@thegrandhotel.com
+                                <h4>Conference Booking Details</h4>
+                                <p>15:12 today</p></a></li>
+                            <li class="new-mail"><a href="#"><i class="fa fa-fw fa-envelope"></i>Peter Russell
+                                <h4>RE: System Performance Report</h4>
+                                <p>14:56 today</p></a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-envelope"></i>services@c9.io
+                                <h4>Latest Cloud 9 Innovations</h4>
+                                <p>13:33 today</p></a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-envelope"></i>techsupport@bjsystems.com
+                                <h4>RE: System Performance Report</h4>
+                                <p>13:12 today</p></a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-envelope"></i>johnsmith@gmail.co.uk
+                                <h4>Order No. 55345</h4>
+                                <p>13:04 today</p></a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-envelope"></i>Peter Russell
+                                <h4>RE: System Performance Report</h4>
+                                <p>12:50 today</p></a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-envelope"></i>awards@telegraph.com
+                                <h4>Award Submissions Reminder</h4>
+                                <p>12:41 today</p></a></li>
+                            <li><a href="#"><i class="fa fa-fw fa-envelope"></i>techsupport@bjsystems.com
+                                <h4>System Performance Report</h4>
+                                <p>12:17 today</p></a></li>
+                        </ul>
+                        <!-- end tab 2-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END SIDEPANEL -->
+    </main>
+    <!-- END MAIN PAGE-CONTENT -->
+</section>
+<!-- END WRAP CONTAINER-FLUID -->
+<!-- BEGIN FOOTER -->
+<div id="schedule-modal" tabindex="-1" role="dialog" aria-hidden="true" class="modal">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" aria-label="Close" class="custombox_close close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">Office Meeting</h2>
+            </div>
+            <div class="modal-body">
+                <form class="dialog-form form-styled">
+                    <div class="form-group">
+                        <label for="shift_name">Name</label>
+                        <input type="text" id="shift_name" value="" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="custombox_close btn btn-default">Close</button>
+                <button type="button" class="custombox_close btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- BEGIN SCRIPTS -->
+<script src="js/layout.min.js"></script>
+<!--
+<script src="plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+<script src="plugins/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+
+<script src="plugins/highcharts/highcharts.js"></script>
+<script src="plugins/highcharts/highcharts-3d.js"></script>
+-->
+<script src="js/pages/data/dashboard-test-client-data.js"></script>
+<script src="plugins/visjs/vis.min.js"></script>
+<script src="plugins/countup.js/countUp.min.js"></script>
+<script src="plugins/custombox/custombox.min.js"></script>
+<script src="js/pages/index.js"></script>
+			<script src="js/pages/ui-notifications.js"></script>
+<script src="js/pages/ui-dialogues.js"></script>
+<script src="plugins/bootbox/bootbox.min.js"></script>
+<script src="plugins/jbox/jBox.min.js"></script>
+<script src="plugins/sweetalert/sweetalert.min.js"></script>									
+
+
+<!-- END SCRIPTS -->
+</body>
+</html>

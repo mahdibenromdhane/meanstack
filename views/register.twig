@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+COLOURcode Template
+Copyright 2016 Pro-Coders
+https://themeforest.net/user/pro-coders
+-->
+<html>
+<!-- BEGIN HEAD -->
+
+<!-- Mirrored from colourcode.procoders.site/function-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Mar 2017 02:27:04 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Pro-Coders">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" id="favicon" href="../images/favicon.png">
+    <title>Login Form</title>
+    <!-- BEGIN STYLES -->
+    <link rel="stylesheet" id="pagestyle" href="../stylesheets/layout.min.css">
+    <!-- END STYLES -->
+
+
+
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="body-blank">
+<!-- BEGIN WRAP CONTAINER-FLUID -->
+<section class="container-fluid">
+    <!-- BEGIN HEADER -->
+    <!-- END HEADER -->
+    <!-- BEGIN MAIN PAGE-CONTENT -->
+    <main>
+        <!-- BEGIN CONTENT -->
+          <article style="height: 100%;" class="row">
+          <div style="height:100%" class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="vert-centre">
+              <div class="panel panel-green shadow-box">
+                <div class="panel-heading">
+                  <h2 class="panel-title"><i class="fa fa-lg fa-pencil-square-o text-green"></i>User Registration</h2>
+                </div>
+                <div class="panel-body">
+                  <form data-toggle="validator" autocomplete="off" action="/signup" method="post" class="form-styled" enctype='multipart/form-data'>
+                    <div class="form-group has-feedback">
+                      <label for="firstname">Firstname</label>
+                      <input type="text" id="firstName"  name="firstName" maxlength="30" required pattern="[a-zA-Z]+" placeholder="" data-error="Please enter your firstname" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <label for="surname">LastName</label>
+                      <input type="text" id="lastName"  name="lastName" maxlength="30" required pattern="[a-zA-Z]+" placeholder="" data-error="Please enter your surname" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <label for="email">Email address</label>
+                      <input type="email" id="email" name="username" maxlength="150" required data-error="Must be a valid email address" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <label for="password">Password</label>
+                      <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" placeholder="" data-error="Must be at least 6 characters including 1 number, 1 uppercase letter and 1 lowercase letter" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                      <div class="form-group has-feedback">
+                      <label for="imei">IMEI</label>
+                      <input type="text" id="imei" name="imei"  required  placeholder="" data-error="Must be a valid IMEI number" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+                      <div class="form-group has-feedback">
+                      <label for="imei">Photo</label>
+                      <input type="file" id="imei" name="image" required  placeholder="" data-error="You need to select a photo" class="form-control"><span aria-hidden="true" class="glyphicon form-control-feedback"></span><span class="help-block with-errors"></span>
+                    </div>
+            
+                       <button type="submit" class="btn btn-outline btn-default btn-xs-100 pull-left text-grey"><i class="fa fa-lg fa-arrow-right"></i>&nbsp; Next</button>
+                    
+
+                  </form>
+                                                    <br>
+                            <br>
+                            <br>
+                            
+                                                    {% if message %}
+                        <div role="alert" class="alert alert-warning alert-icon"><b>{{message}}</b></div>
+                        {% endif%}
+                                                 
+                </div>
+               
+              </div>
+            </div>
+
+          </div>
+        </article>
+        
+        <!-- END CONTENT -->
+    </main>
+</section>
+<!-- BEGIN SCRIPTS -->
+<script src="../js/layout.min.js"></script>
+<!-- END SCRIPTS -->
+</body>
+<!-- END BODY -->
+
+<!-- Mirrored from colourcode.procoders.site/function-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Mar 2017 02:27:04 GMT -->
+</html>
